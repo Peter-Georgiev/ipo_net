@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="MariaDB - @localhost">
+<dataSource name="MySQL - @localhost">
   <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.15">
     <root id="1">
       <ServerVersion>10.1.36</ServerVersion>
@@ -16,6 +16,7 @@
     <schema id="4" parent="1" name="ipo_net">
       <Current>1</Current>
       <Collation>latin1_swedish_ci</Collation>
+      <Visible>1</Visible>
     </schema>
     <schema id="5" parent="1" name="ipo_network">
       <Collation>latin1_swedish_ci</Collation>
@@ -983,5 +984,26 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
+    <table id="249" parent="4" name="migration_versions">
+      <Collation>utf8_general_ci</Collation>
+    </table>
+    <column id="250" parent="249" name="version">
+      <Position>1</Position>
+      <DataType>varchar(14)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="251" parent="249" name="executed_at">
+      <Position>2</Position>
+      <Comment>(DC2Type:datetime_immutable)</Comment>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="252" parent="249" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>version</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

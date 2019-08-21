@@ -12,6 +12,11 @@ class MainController extends AbstractController
      */
     public function index()
     {
+        if ($this->getUser()) {
+            $username = $this->getUser()->getUsername();
+            echo strval($username) . " - MainController";
+        }
+
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
         ]);
